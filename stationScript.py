@@ -45,4 +45,4 @@ def keepGoing( x, fname ):
 	while( x > 0 or x == -1 ):
 		p( getTime() + str(getDetails()) )
 		time.sleep(60)
-		x -= 1
+		if x > 0: x -= 1

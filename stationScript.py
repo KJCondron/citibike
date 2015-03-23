@@ -45,6 +45,6 @@ p = partial(writeLnToFile, fname)
 
 def keepGoing( x ):
 	while( x > 0 or x == -1 ):
-		p( getTime() + str(getDetails() )
+		p( getTime() + str(getDetails()) )
 		time.sleep(60)
 		x -= 1

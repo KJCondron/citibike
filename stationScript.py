@@ -40,10 +40,8 @@ def writeLnToFile( filename , text ):
 def getTime():	
 	return strftime("%Y-%m-%d %H:%M:%S", gmtime())
 	
-fname = 'C:\users\karl\bikeStationDataP.txt'
-p = partial(writeLnToFile, fname)
-
-def keepGoing( x ):
+def keepGoing( x, fname ):
+	p = partial(writeLnToFile, fname)
 	while( x > 0 or x == -1 ):
 		p( getTime() + str(getDetails()) )
 		time.sleep(60)

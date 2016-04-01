@@ -6,7 +6,7 @@ import time
 from time import gmtime, strftime
 from functools import partial
 
-iids = [305,290,464,522,2023,367]
+iids = [305,290,464,522,2023,367,3155,3134,3132,137]
 
 def getStations():
 	loc = "http://www.citibikenyc.com/stations/json"

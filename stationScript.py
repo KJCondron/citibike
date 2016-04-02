@@ -25,10 +25,17 @@ def getDetails():
 
 		def parse(s): return (s[id], s[ab])
 		#parse = lambda s : (s[id], s[ab])
-		def check(s): return s[id] in iids
+		#def check(s): return s[id] in iids
 		#check = lambda s : s[id] in iids
+		def check(s): return s[0] in iids # already parsed into tuple
 
-		stations = [parse(s) for s in allStations if check(s)] 
+		pAllStations = [parse(s) for s in allStations]
+		count = 0
+		for s in pAllStations:
+			count += s[1]
+		
+		stations = [s for s in pAllStations if check(s)]
+		stations.append(("All",count))
 
 		return stations
 	except:

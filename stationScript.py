@@ -17,19 +17,22 @@ def getStations():
 	
 def getDetails():
 	
-	allStations = getStations() 
-	
-	id = "id"
-	ab = "availableBikes"
-	
-	def parse(s): return (s[id], s[ab])
-	#parse = lambda s : (s[id], s[ab])
-	def check(s): return s[id] in iids
-	#check = lambda s : s[id] in iids
-	
-	stations = [parse(s) for s in allStations if check(s)] 
-	
-	return stations
+	try:
+		allStations = getStations() 
+
+		id = "id"
+		ab = "availableBikes"
+
+		def parse(s): return (s[id], s[ab])
+		#parse = lambda s : (s[id], s[ab])
+		def check(s): return s[id] in iids
+		#check = lambda s : s[id] in iids
+
+		stations = [parse(s) for s in allStations if check(s)] 
+
+		return stations
+	except:
+		return "error gettting details"
 	
 def writeLnToFile( filename , text ):
 	fl = open(filename, 'a')
